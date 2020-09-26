@@ -15,12 +15,15 @@ namespace WebAPIHelloWorld2.Controllers
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
-
-
+        
         [HttpGet]
-        public string Get()
+        public string Get(string name)
         {
-            return "Well, hello! It it me your looking for?";
+            if (name == null)
+            {
+                return "Well, hello! It it me your looking for?";
+            }
+            return "Well, hello, " + name + "! It it me your looking for?";
         }
     }
 }
